@@ -1,20 +1,19 @@
+import '../styles/globals.css';
 import '@/styles/dist.css';
-import React from 'react';
+import Header from '@/ui/Header';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>
       <head>
         <title>Next.js Turbopack App Directory Playground</title>
       </head>
       <body className="overflow-y-scroll bg-zinc-900">
-        <h1>Page layout</h1>
+        <Header />
         {children}
       </body>
     </html>
   );
 }
+
+export default RootLayout;
