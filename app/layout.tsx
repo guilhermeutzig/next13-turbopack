@@ -1,5 +1,4 @@
 import '@/styles/dist.css';
-import '@/styles/globals.css';
 import Header from '@/ui/Header';
 
 function RootLayout({ children }: { children: React.ReactNode }) {
