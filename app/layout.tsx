@@ -1,5 +1,5 @@
-import '../styles/globals.css';
 import '@/styles/dist.css';
+import '@/styles/globals.css';
 import Header from '@/ui/Header';
 
 function RootLayout({ children }: { children: React.ReactNode }) {
@@ -8,7 +8,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
       <head>
         <title>Next.js Turbopack App Directory Playground</title>
       </head>
-      <body className="overflow-y-scroll bg-zinc-900">
+      <body className="overflow-y-scroll bg-zinc-900 text-white">
         <Header />
         {children}
       </body>
