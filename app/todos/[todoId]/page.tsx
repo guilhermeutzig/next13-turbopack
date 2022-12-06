@@ -1,10 +1,13 @@
 import { Todo } from 'typings';
+import { notFound } from 'next/navigation';
 
 type Props = {
   params: {
     todoId: string;
   };
 };
+
+export const dynamicParams = true;
 
 const fetchTodo = async (todoId: string) => {
   const res = await fetch(
@@ -18,6 +21,8 @@ const fetchTodo = async (todoId: string) => {
 
 async function TodoPage({ params: { todoId } }: Props) {
   const todo = await fetchTodo(todoId);
+
+  if (!todo.id) return notFound();
 
   return (
     <div className="m-2 border-2 bg-yellow-200 p-10 text-black shadow-lg">
