@@ -1,4 +1,38 @@
-# Next.js + Turbopack App Directory Playground
+## Goal to achieve with this boilerplate
+
+Simply understand what new features were added to Next.js 13 with Turbopack
+
+## How to install
+
+Just run:
+
+```sh
+npx create-next-app --example with-turbopack
+```
+
+Reference: https://beta.nextjs.org/docs/configuring/turbopack
+
+## Issues I had with this boilerplate
+
+- When using Route Groups (directories with `()`), Homepage is not accessible anymore
+
+  - ```sh
+    VM5823 node_modules_next_dist_client_components_app-router.js:585 Uncaught TypeError: flightRouterState is not iterable
+    ```
+
+- Loading state for pages (e.g. `loading.tsx`) only works when refreshing the page. You can see an example by directly accessing: `/search/dasd`
+- Error state pages only show the error with the standard Next.js warning. Custom error pages (e.g. `error.tsx`) were not loaded
+- Tailwind was not generating classes in runtime with Turbopack, but Vercel offered a very simple explanation to get it working on the official README
+
+## Final thoughts
+
+I still want to test Next.js 13 with it's regular bundler instead of Turbopack to see if I can reproduce the same issues I did in this repo. I'll probably open another branch here.
+
+Below you'll see the official readme that comes in the repo when you clone it:
+
+---
+
+## Next.js + Turbopack App Directory Playground
 
 [Turbopack](https://turbo.build/pack) is a new incremental bundler optimized for JavaScript and TypeScript, written in Rust by the creators of Webpack and Next.js at [Vercel](https://vercel.com). On large applications Turbopack updates 10x faster than Vite and 700x faster than Webpack ([benchmark](https://turbo.build/pack/docs/benchmarks)). For the biggest applications the difference grows even more stark with updates up to 20x faster than Vite.
 
@@ -36,14 +70,3 @@ https://nextjs.link/with-turbopack
 ## Providing Feedback
 
 https://nextjs.link/turbopack-feedback
-
-## Issues I had with this boilerplate
-
-- When using Route Groups (directories with `(directory)`), Homepage is not accessible anymore
-
-```
-VM5823 node_modules_next_dist_client_components_app-router.js:585 Uncaught TypeError: flightRouterState is not iterable
-```
-
-- Loading state for pages (e.g. `loading.tsx`) only works when refreshing the page. You can see an example by directly accessing: `/search/dasd`
-- Error state pages only show the error with the standard Next.js warning. Custom error pages (e.g. `error.tsx`) were not loaded
