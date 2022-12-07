@@ -36,3 +36,14 @@ https://nextjs.link/with-turbopack
 ## Providing Feedback
 
 https://nextjs.link/turbopack-feedback
+
+## Issues I had with this boilerplate
+
+- When using Route Groups (directories with `(directory)`), Homepage is not accessible anymore
+
+```
+VM5823 node_modules_next_dist_client_components_app-router.js:585 Uncaught TypeError: flightRouterState is not iterable
+```
+
+- Loading state for pages (e.g. `loading.tsx`) only works when refreshing the page. You can see an example by directly accessing: `/search/dasd`
+- Error state pages only show the error with the standard Next.js warning. Custom error pages (e.g. `error.tsx`) were not loaded
