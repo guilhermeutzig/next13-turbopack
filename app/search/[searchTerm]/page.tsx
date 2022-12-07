@@ -4,18 +4,47 @@ type Props = {
   };
 };
 
-const search = async (searchTerm: string) => {
+type SearchResult = {
+  organic_results: [
+    {
+      position: number;
+      title: string;
+      link: string;
+      thumbnail: string;
+      snippet: string;
+    },
+  ];
+};
+
+const getSearchResults = async (searchTerm: string) => {
   const res = await fetch(
-    `https://serpapi.com/search.json?q=${searchTerm}&api_key=${process.env.API_KEY}`,
+    `https://serpapi.com/search.json?q=${searchTerm}&api_key=${process.env.SERP_API_KEY}`,
   );
-  const data = await res.json();
+  const data: SearchResult = await res.json();
   return data;
 };
 
 async function SearchTermPage({ params: { searchTerm } }: Props) {
-  const searchResults = await search(searchTerm);
+  const searchResults = await getSearchResults(searchTerm);
 
-  return <div>search results</div>;
+  throw new Error('Whoops');
+
+  return (
+    <div>
+      <p className="mt-2 text-sm text-gray-500">
+        {' '}
+        You searched for: {searchTerm}
+      </p>
+      <ol className="space-y-5 p-5">
+        {searchResults.organic_results.map(({ position, title, snippet }) => (
+          <li key={position} className="list-decimal">
+            <p className="font-bold">{title}</p>
+            <p>{snippet}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
 }
 
 export default SearchTermPage;

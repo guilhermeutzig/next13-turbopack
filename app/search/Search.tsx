@@ -21,6 +21,7 @@ function Search() {
         value={search}
         placeholder="Enter the Search term"
         onChange={(e) => setSearch(e.target.value)}
+        className="mr-2 rounded-lg py-2 px-4 text-black"
       />
       <button
         type="submit"
