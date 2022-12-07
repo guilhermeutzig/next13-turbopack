@@ -3,10 +3,7 @@ import TodosList from './TodosList';
 function Todos() {
   return (
     <div>
-      {/* Known bug */}
-      {/* Vercel team doesn't currently have Typescript definitions for server components */}
-      {/* @ts-ignore */}
-      <TodosList />
+      <h1>This is where the todos will be listed...</h1>
     </div>
   );
 }

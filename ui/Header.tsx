@@ -9,6 +9,9 @@ function Header() {
       >
         Home
       </Link>
+      <Link href="/todos" className="rounded px-2 py-1 text-white">
+        Todos
+      </Link>
     </header>
   );
 }
