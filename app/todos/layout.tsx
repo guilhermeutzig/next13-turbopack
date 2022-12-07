@@ -1,4 +1,4 @@
-import TodosList from './TodosList';
+import TodosList from '@/ui/TodosList';
 
 function RootLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -27,8 +27,6 @@ const getSearchResults = async (searchTerm: string) => {
 async function SearchTermPage({ params: { searchTerm } }: Props) {
   const searchResults = await getSearchResults(searchTerm);
 
-  throw new Error('Whoops');
-
   return (
     <div>
       <p className="mt-2 text-sm text-gray-500">

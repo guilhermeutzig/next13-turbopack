@@ -12,6 +12,9 @@ function Header() {
       <Link href="/todos" className="rounded px-2 py-1 text-white">
         Todos
       </Link>
+      <Link href="/search" className="rounded px-2 py-1 text-white">
+        Search
+      </Link>
     </header>
   );
 }

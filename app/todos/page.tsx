@@ -1,5 +1,3 @@
-import TodosList from './TodosList';
-
 function Todos() {
   return (
     <div>

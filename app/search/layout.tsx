@@ -1,4 +1,4 @@
-import Search from './Search';
+import Search from '@/ui/Search';
 
 function RootLayout({ children }: { children: React.ReactNode }) {
   return (
